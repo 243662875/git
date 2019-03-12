@@ -5,32 +5,34 @@ $ git config --global user.email "email@example.com"
 ---命令介绍----
 git init ======== 把这个目录变成Git可以管理的仓库
 git add 文件名 =======	把文件添加到仓库的暂存区,(成功没有消息)
-git commit -m "提交说明" ====== 把文件提交到仓库
+git commit -m "提交说明" ====== 把文件提交到本地仓库
 git status ========= 查看是否还有未提交的文件
 git diff ====== 查看具体修改了什么内容
 git log ====== 显示从最近到最远的提交日志
 git log --pretty=oneline ====== 简洁方式查看提交的日志
 git reset --hard HEAD^ ======= 回退到上个版本(上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100)
-如果回退到上个版本，当前版本就会是这个版本，之前的版本都不会存在，需要想要在恢复过来，需要找个之前的commit id
+#如果回退到上个版本，当前版本就会是这个版本，之前的版本都不会存在，需要想要在恢复过来，需要找个之前的commit id
 git reset --hard 6037a64e36f0a3144c833dccb1d3b068fe033164 == 恢复到某个版本记录
-如果忘记了想好恢复的版本号，可以使用git reflog ======记录了你的每一次版本的命令
+#如果忘记了想要恢复的版本号，需要使用命令
+git reflog ======记录了你的每一次更新版本的命令
 git checkout -- 文件名 ==== 把工作区修改的文件内容全部撤销（还原成和版本库一样的状态），适用于文件还没有放到暂缓区
 git reset HEAD 文件名 ===== 把暂存区的修改回退到工作区(就是放弃执行git add)
-git rm 文件名 ====== 删除版本库的文件(手动删除了工作区的文件，确实也要从版本库中删除该文件，那就用命令git rm删掉，并且git commit)
-git checkout -- 文件名 ===== 误删除工作区的文件可以用这个命令还原回来
+git rm 文件名 ====== 删除版本库的文件(手动删除了工作区的文件，也要从版本库中删除该文件，那就用命令git rm删掉，并且git commit再提交)
+git checkout -- 文件名 ===== 误删除工作区的文件可以用这个命令从版本库还原回来
 
-
-
-
-
-
------github---------
+-----github操作---------
 ssh-keygen -t rsa -C "youremail@example.com"  ==== 生成秘钥
-然后在GitHub上 settings --> SSH and GPG keys 里添加秘钥(在自己的用户目录下的id_rsa.pub公钥内容粘贴上去)
+#然后在GitHub上 settings --> SSH and GPG keys 里添加秘钥(在自己的用户目录下的id_rsa.pub公钥内容粘贴上去)
+#新建仓库后使用命令上传文件到GitHub 
+git remote add origin https://github.com/243662875/git.git，=== 关联一个远程库，远程库的名字就是origin
+git push -u origin master	=== 第一次把本地库的内容推送到github需要加上-u，完成后就可以在github上查看自己的内容
+git push origin master  === 以后提交都可以通过这个命令开始推送
+
+##分布式版本系统的最大好处之一是在本地工作完全不需要考虑远程库的存在，也就是有没有联网都可以正常工作，而SVN在没有联网的时候是拒绝干活的！当有网络的时候，再把本地提交推送一下就完成了同步
+git clone git@github.com:michaelliao/gitskills.git === 把文件克隆到本地
 
 
-
-
-
-
+----分支管理---------
+git checkout -b dev === 创建dev分支，并切换到dev分支
+git branch === 查看当前分支
 
