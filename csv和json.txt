@@ -1,0 +1,12 @@
+# file = open('E:\\fana\\sss.csv')	#打开csv文件
+# reader = csv.reader(file)			#返回一个可读对象，默认返回的是列表形式
+# for i in reader:					#可用循环查看，
+#     print('Row #' + str(reader.line_num) + ' ' + str(i))
+--------------------------------------
+# file = open('E:\\fana\\sss.csv','w',newline='') #已写模式打开，newline表示传入空字符
+# writer = csv.writer(file)						#如果忘记设置newline 关键字参数，行距会是两倍
+csvWriter = csv.writer(csvFile, delimiter='\t',lineterminator='\n\n')	#delimiter传入到一行表格里，lineterminator设置行距
+# writer.writerow(['sss','dsds','ddssa','fac']) #已列表的形式写入，一个逗号一个表格
+# writer.writerow([1,2,3,4,5])
+# file.close()
+

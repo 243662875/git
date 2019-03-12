@@ -2,6 +2,9 @@
 $ git config --global user.name "Your Name"
 $ git config --global user.email "email@example.com"
 
+---命令介绍----
 git init ======== 把这个目录变成Git可以管理的仓库
 git add =======	把文件添加到仓库,(成功没有消息)
 git commit -m "提交说明" ====== 把文件提交到仓库
+git status ========= 查看是否还有未提交的文件
+git diff ====== 查看具体修改了什么内容
