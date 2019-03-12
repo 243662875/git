@@ -33,6 +33,8 @@ git clone git@github.com:michaelliao/gitskills.git === 把文件克隆到本地
 
 
 ----分支管理---------
-git checkout -b dev === 创建dev分支，并切换到dev分支
+git branch dev  === 创建分支dev分支
+git checkout -b dev === 创建dev分支并切换到dev分支
 git branch === 查看当前分支
+git checkout master === 切换到master分支
 
