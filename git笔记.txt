@@ -1,0 +1,7 @@
+安装完成后git的最后一步设置
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+
+git init ======== 把这个目录变成Git可以管理的仓库
+git add =======	把文件添加到仓库,(成功没有消息)
+git commit -m "提交说明" ====== 把文件提交到仓库
