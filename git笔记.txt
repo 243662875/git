@@ -56,6 +56,10 @@ git merge --no-ff -m "merge with no-ff" dev == 准备合并dev分支时,加上--
 #你现在正在dev分支上的新增的功能还没有完成,又有个之前的bug需要修复,需要先把当前工作存储起来
 git stash == 把当前工作现场“储藏”起来，等以后恢复现场后继续工作，需要先执行（git add *）添加到储存区才能执行这个命令
 #这个时候需要回到master分支上，创建个bug分支来修复bug，修复完成后再提交到版本库，然后回到master分支合并bug分支
+#合并完成后，回到dev继续之前的工作，需要把存储的内容恢复过来，
+git stash list == 查看存储的记录
+git stash pop  == 恢复之前存储的内容，同时会把之前的记录也删了
+git stash apply == 恢复后，stash内容并不删除需要用 git stash drop 删除记录
 
-
-
+总结：修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除；
+当手头工作没有完成时，先把工作现场git stash一下，然后去修复bug，修复后，再git stash pop，回到工作现场。
