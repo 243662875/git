@@ -1,9 +1,0 @@
-teratemt
-123456788
-
-git : http://10.145.196.76:9080/billing/rate/rate-conf.git 
-
-configserver   /  1qazxsw@
-
-
-该发布流水线 参考 ecp用户
